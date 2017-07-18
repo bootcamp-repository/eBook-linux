@@ -28,10 +28,12 @@ import javax.swing.text.Document;
 
 import org.springframework.util.StringUtils;
 import javax.swing.JToggleButton;
+import javax.swing.JTable;
 
 public class List {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -73,8 +75,12 @@ public class List {
 		frame.getContentPane().add(tglbtnNewToggleButton);
 		
 		JToggleButton toggleButton = new JToggleButton("New toggle button");
-		toggleButton.setBounds(10, 47, 300, 20);
+		toggleButton.setBounds(0, 46, 300, 20);
 		frame.getContentPane().add(toggleButton);
+		
+		table = new JTable();
+		table.setBounds(0, 149, 1, 1);
+		frame.getContentPane().add(table);
 
 		JButton backButton = new JButton("Book1");
 		backButton.addActionListener(new ActionListener() {
