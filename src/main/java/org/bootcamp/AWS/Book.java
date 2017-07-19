@@ -1,10 +1,19 @@
 package org.bootcamp.AWS;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 
 @Entity
-public class Book {
+public class Book implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7326480194864180530L;
+
+
+
 	@Id
 	//@OneToOne(mappedBy = "activeBook", fetch = FetchType.LAZY)
 	@GeneratedValue(strategy=GenerationType.AUTO)

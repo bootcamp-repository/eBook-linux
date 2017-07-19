@@ -1,6 +1,8 @@
 package org.bootcamp.AWS;
 
+import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -15,7 +17,12 @@ import javax.persistence.*;
 
 
 @Entity
-public class User {
+public class User implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -39,7 +46,7 @@ public class User {
 
 	private String name;
 	private String password;
-
+	
 
 	public int getId() {
 		return id;
@@ -86,12 +93,14 @@ public class User {
 		System.out.println("Invoice content " + this.toString());		
 
 	}
+	
+	
 	@javax.persistence.OneToMany(mappedBy = "user") 
 	public Set<Book> getItems() {
 
 		return this.books;
 	}
-
+	
 
 
 	@Override
